@@ -1,0 +1,23 @@
+<div class="container-fluid">
+  <div class="col-lg-10 col-lg-offset-1">
+    <h1 class="text-center">Switchboard</h1>
+      <div class="row">
+        <div class="col-lg-10 col-lg-offset-1 button-wrapper">
+          <div class="switch" *ngFor="let switch of switches; let idx = index">
+            <div
+              class="btn btn-large"
+              *ngIf="switch"
+               [ngClass]="{'on': switch}"
+               (click)="flipSwitch(idx)"
+              >ON</div>
+            <div
+              class="btn"
+              *ngIf="!switch"
+               [ngClass]="{'on': switch}"
+               (click)="flipSwitch(idx)"
+              >OFF</div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
